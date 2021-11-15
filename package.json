@@ -1,0 +1,15 @@
+{
+  "name": "mf-poc",
+  "version": "0.0.0",
+  "description": "Demo Module Federation ",
+  "repository": "git@github.com:anafrost01/mf-poc.git",
+  "author": "Ana Labeca <anafrost01@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}
