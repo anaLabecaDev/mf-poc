@@ -1,14 +1,20 @@
-import React from "react";
-import ReactDOM from "react-dom";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Navigation } from './components/Navigation/Navigation';
+import Empty from './assets/empty.svg';
 
-import "./index.scss";
+import './index.scss';
 
 const App = () => (
-  <div className="mt-10 text-3xl mx-auto max-w-6xl">
-    <div>Name: main</div>
-    <div>Framework: react</div>
-    <div>Language: TypeScript</div>
-    <div>CSS: Tailwind</div>
-  </div>
+  <main className='h-screen flex md:flex-row flex-col-reverse'>
+    <Navigation />
+    <section className='flex-grow bg-gray-200'>
+      <article>
+        <h1 className='text-2xl font-bold'>Nothing to see here yet</h1>
+        <img src={Empty} alt='React Logo' />
+      </article>
+    </section>
+  </main>
 );
-ReactDOM.render(<App />, document.getElementById("app"));
+
+ReactDOM.render(<App />, document.getElementById('app'));
