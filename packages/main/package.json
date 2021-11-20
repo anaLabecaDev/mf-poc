@@ -1,5 +1,5 @@
 {
-  "name": "main",
+  "name": "@carlsberg/main",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",

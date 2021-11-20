@@ -1,0 +1,14 @@
+{
+  "exclude": ["node_modules", "./packages/**/node_modules"],
+  "compilerOptions": {
+    "target": "es6",
+    "outDir": "./dist",
+    "module": "commonjs",
+    "jsx": "react",
+    "strict": true,
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true
+  }
+}
