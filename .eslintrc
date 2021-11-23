@@ -1,0 +1,15 @@
+{
+  "extends": ["@carlsberg/eslint-config-carlsberg"],
+  "rules": {
+    "no-console": "off",
+    "no-debugger": "warn"
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx"],
+        "moduleDirectory": ["node_modules", "src/"]
+      }
+    }
+  }
+}
