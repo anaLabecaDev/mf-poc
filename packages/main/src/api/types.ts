@@ -1,8 +1,9 @@
 export interface AuthRequest {
-  userName: string;
+  username: string;
   password: string;
 }
 
 export interface AuthResponse {
-  accessToken: string;
+  // eslint-disable-next-line camelcase
+  access_token: string;
 }

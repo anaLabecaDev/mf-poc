@@ -7,7 +7,7 @@ export const api = createApi({
   reducerPath: 'mainAPI',
   baseQuery: fetchBaseQuery({ baseUrl: API_SERVER }),
   endpoints: (builder) => ({
-    getAccessToken: builder.query<AuthRequest, AuthResponse>({
+    getAccessToken: builder.mutation<AuthResponse, AuthRequest>({
       query: (data) => ({
         url: '/auth/login',
         method: 'POST',
@@ -17,3 +17,5 @@ export const api = createApi({
     })
   })
 });
+
+export const { useGetAccessTokenMutation } = api;
