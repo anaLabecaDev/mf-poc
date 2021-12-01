@@ -5,7 +5,7 @@ import Table from './Table';
 export const OutletList = () => {
   const test = 'test';
   return (
-    <section className="w-screen h-screen">
+    <section className="w-full h-screen bg-white">
       <Heading />
       <Table />
     </section>

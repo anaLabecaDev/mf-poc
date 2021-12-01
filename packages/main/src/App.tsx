@@ -1,26 +1,26 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React, { Suspense } from 'react';
 import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
-import { Login } from './features/Login/Login';
+// import Empty from './components/Empty';
+// import { Login } from './features/Login/Login';
 import { Navigation } from './features/Navigation/Navigation';
 import './index.scss';
 import store from './state/store';
 
+const Outlets = React.lazy(() => import('outlet/OutletRemote'));
+
 const App = () => (
   <Provider store={store}>
-    <BrowserRouter>
-      <main className="h-screen flex md:flex-row flex-col-reverse">
-        <Navigation />
-        <section className="flex-grow bg-gray-200">
-          <Login />
-          {/* <article className="flex-1 h-full flex justify-center items-center">
-            <h1 className="text-2xl font-bold">Nothing to see here yet</h1>
-          </article> */}
-        </section>
-      </main>
-    </BrowserRouter>
+    <main className="h-screen flex md:flex-row flex-col-reverse">
+      <Navigation />
+      <section className="flex-grow bg-gray-200">
+        <Suspense fallback="Loading...">
+          <Outlets />
+        </Suspense>
+        {/* <Login /> */}
+        {/* <Empty /> */}
+      </section>
+    </main>
   </Provider>
 );
 
-ReactDOM.render(<App />, document.getElementById('root'));
+export default App;

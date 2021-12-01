@@ -1,8 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom';
+import { Outlet } from './features/Outlet';
 import { OutletList } from './features/OutletList';
-import './index.scss';
 
-const App = () => <OutletList />;
+const App = () => (
+  <BrowserRouter>
+    <Routes>
+      <Route path="/outlets" element={<OutletList />} />
+      <Route path="/outlet" element={<Outlet />} />
+      <Route path="/" element={<Navigate replace to="/outlets" />} />
+    </Routes>
+  </BrowserRouter>
+);
 
-ReactDOM.render(<App />, document.getElementById('app'));
+export default App;

@@ -54,17 +54,28 @@ module.exports = {
     new ModuleFederationPlugin({
       name: 'main',
       filename: 'remoteEntry.js',
-      remotes: {},
-      exposes: {},
+      remotes: {
+        outlet: 'outlet@http://localhost:3001/remoteEntry.js'
+      },
+      exposes: {
+        './Empty': './src/components/Empty.tsx'
+      },
       shared: {
         ...deps,
         react: {
+          eager: true,
           singleton: true,
           requiredVersion: deps.react
         },
         'react-dom': {
+          eager: true,
           singleton: true,
           requiredVersion: deps['react-dom']
+        },
+        'react-router-dom': {
+          eager: true,
+          requiredVersion: deps['react-router-dom'],
+          singleton: true
         }
       }
     }),
